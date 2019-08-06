@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Solr Tutorial - Amazon Customer's Reviews </title>
+</head>
+<body>
+   <div>
+       <h3>Collection - 20 millions of Amazon Reviews.</h3>
+<a href="https://s3.amazonaws.com/amazon-reviews-pds/readme.html" target="_blank">Amazon Customer Reviews</a>
+	</div>
+   
+    <div >
+    <form method="GET" action="/search/result" >{% csrf_token %}
+        <p><label>query:</label> <input type="text" name="query" size="100" </p>
+        <button type="submit" class="save btn btn-default">Search</button>
+    </form>
+    </div>
+<hr>
+<ul>
+	<li><p>General Queries</p></li>
+		<ul>
+ 			<li><a href="/search/result?query=q%3D*%3A*%26rows%3D0%26%26facet%3Dtrue%26facet.pivot%3Dproduct_id%2Cstar_rating%26facet.limit%3D10">Facet by Product_id and star-ratings (Pivot)</a> 
+		</ul>
+</ul>
+</body>
+</html>
