@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
+import socket
 
 import os
 
@@ -20,12 +21,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'llystm*nx5ad2newrj6-9%oixh9bbl%70lnhe_62t1d#oah8ii'
+#SECRET_KEY = 'llystm*nx5ad2newrj6-9%oixh9bbl%70lnhe_62t1d#oah8ii'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['ec2-13-58-200-232.us-east-2.compute.amazonaws.com', 'localhost', '127.0.0.1']
+#ALLOWED_HOSTS = ['internet-elb-2050640012.us-east-2.elb.amazonaws.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['internet-elb-2050640012.us-east-2.elb.amazonaws.com', 'ec2-18-216-3-68.us-east-2.compute.amazonaws.com']
 
 
 # Application definition
