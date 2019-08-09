@@ -1,5 +1,0 @@
-from base_settings.py import *
-
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
