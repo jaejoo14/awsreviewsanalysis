@@ -1,0 +1,26 @@
+{% extends "awsreviews/base.html" %}
+{% block content %}
+ <div class="container">
+<form action="https://mailthis.to/tse" method="POST" encType="multipart/form-data">
+
+    <label for="fname">name</label>
+    <input type="text" id="name" name="name" placeholder="Your name.."/>
+
+    <label for="email">email</label><p/>
+    <input type="email" name="_replyto" placeholder="Your email"/>
+
+<br><br>
+    <label for="subject">subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="hidden" name="_subject" value="Contact form submitted">
+    <input type="hidden" name="_after" value="https://www.thesearchenterprise.net/">
+    <input type="hidden" name="_honeypot" value="">
+    <input type="hidden" name="_confirmation" value="">
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+{% endblock content %}
+

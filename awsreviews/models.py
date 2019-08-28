@@ -9,6 +9,8 @@ import json
 class Search(models.Model):
     query= models.CharField(max_length=1000)
 
+class Stream(models.Model):
+    expr= models.CharField(max_length=1000)
 
 
 
