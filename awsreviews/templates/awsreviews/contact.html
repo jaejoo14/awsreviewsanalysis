@@ -1,26 +1,68 @@
 {% extends "awsreviews/base.html" %}
 {% block content %}
+<style>
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+*/
+.topnav {
+  overflow: hidden;
+  background-color: #201087;
+}
+</style>
  <div class="container">
 <form action="https://mailthis.to/tse" method="POST" encType="multipart/form-data">
 
     <label for="fname">name</label>
-    <input type="text" id="name" name="name" placeholder="Your name.."/>
-
-    <label for="email">email</label><p/>
-    <input type="email" name="_replyto" placeholder="Your email"/>
-
-<br><br>
-    <label for="subject">subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <input type="text" id="name" name="name" size="70" placeholder="Your name.."/>
+    <br><br>
+    <label for="email">email</label>
+    <input type="email" name="_replyto" size="70"placeholder="Your email"/>
+    <br><br>
+    <label for="subject">subject</label><p/>
+    <textarea id="subject" name="subject" placeholder="Write something.." rows=10 cols=75"></textarea>
 
     <input type="hidden" name="_subject" value="Contact form submitted">
     <input type="hidden" name="_after" value="https://www.thesearchenterprise.com/">
     <input type="hidden" name="_honeypot" value="">
     <input type="hidden" name="_confirmation" value="">
+	<p>
 
     <input type="submit" value="Submit">
 
   </form>
 </div>
 {% endblock content %}
+
+
+
 

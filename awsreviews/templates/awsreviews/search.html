@@ -7,12 +7,15 @@
        <h3>Collection - 20 millions of Amazon Reviews.</h3>
 <a href="https://s3.amazonaws.com/amazon-reviews-pds/readme.html" target="_blank">Amazon Customer Reviews</a>
         </div>
+<hr>
+<br/>
 
     <div >
-    <form method="GET" action="/search/result" >
-        <p><label>query:</label> <input type="text" name="query" size="80" </p>
-        <button type="submit" class="save btn btn-default">Search</button>
-    </form>
+       	<p><label>query:</label> <br/>
+    	<textarea rows="4" cols="50" name="query" form="searchForm"> Enter lucene query here...</textarea>
+    	<form method="GET" action="/search/result" id="searchForm" >
+        	<button type="submit" class="save btn btn-default">Search</button>
+    	</form>
     </div>
 <hr>
 <ul>
@@ -21,6 +24,7 @@
                         <li><a href="/search/result?query=facet.field%3Dstar_rating%26facet%3Don%26q%3Dproduct_id%253AB001FA1NUK%26rows%3D0">Facet  by star-ratings</a>
                 </ul>
                 <ul>
+                        <li><a href="/search/result?query=q%3Dproduct_title:(hdmi%2520AND%2520cable)%26rows%3D0%26facet%3Dtrue%26facet.pivot%3Dproduct_id%2Cstar_rating%26facet.limit%3D10">Facet by Product_id and star-ratings (Pivot)</a>
                         <li><a href="/search/result?query=q%3Dproduct_title:(hdmi%2520AND%2520cable)%26rows%3D0%26facet%3Dtrue%26facet.pivot%3Dproduct_id%2Cstar_rating%26facet.limit%3D10">Facet by Product_id and star-ratings (Pivot)</a>
                 </ul>
                 <ul>
@@ -43,16 +47,21 @@
                         <li><a href="/terms/result?query=terms.fl%3Dproduct_title_str%26terms.regex%3D.*hdmi.*%26terms.mincount%3D5%26terms.limit%3D5">Auto Completing (regex)</a>
                 </ul>
 </ul>
+<hr>
 <br/>
     <div >
-    <form method="GET" action="/stream/result" >{% csrf_token %}
-        <p><label>streaming expr:</label> <input type="text" name="expr" size="100" </p>
-        <button type="submit" class="save btn btn-default">Stream</button>
-    </form>
+
+       	<p><label>streaming expr:</label> <br/>
+    	<textarea rows="4" cols="50" name="expr" form="exprForm"> Enter streaming expression here...</textarea>
+    	<form method="GET" action="/search/result" id="exprForm" >
+        	<button type="submit" class="save btn btn-default">Submit</button>
+    	</form>
     </div>
+<hr>
 <ul>
         <li><p>Streaming Expression</p></li>
                 <ul>
+                        <li><a href='/stream/result?expr=search(reviews,q="product_title:(hdmi AND cable)",fl="id, product_title,star_rating",rows=1000,sort="id asc")'>List first 1000 matched documents</a>
                         <li><a href='/stream/result?expr=let(samples=search(reviews,q="product_title:(hdmi AND cable)",fl="id, product_title,star_rating",rows=1000,sort="id asc"),responses=col(samples,star_rating),summary=describe(responses))'>Summary of star-ratings for (hdmi AND cable)</a>
 		</ul>
 </ul>
