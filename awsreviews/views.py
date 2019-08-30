@@ -24,6 +24,8 @@ def contact(request):
 def about(request):
     return render(request, 'awsreviews/about.html')
 
+def metrics(request):
+    return render(request, 'awsreviews/metrics.html')
 # Create your views here.
 def search_result(request):
 
