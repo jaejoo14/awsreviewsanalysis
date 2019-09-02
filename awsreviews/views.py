@@ -46,6 +46,22 @@ def search_result(request):
     else:
        return render(request, 'awsreviews/index.html')
 
+def collection_result(request):
+
+       URL='http://ec2-3-17-27-254.us-east-2.compute.amazonaws.com:8983/solr/admin/collections?action=CLUSTERSTATUS'
+       response = urlopen(URL)
+       string = response.read().decode('utf-8')
+       json_obj = json.loads(string)
+       return HttpResponse(json.dumps(json_obj),content_type="application/json")
+
+def metrics_result(request):
+
+       URL='http://ec2-3-17-27-254.us-east-2.compute.amazonaws.com:8983/solr/admin/metrics'
+       response = urlopen(URL)
+       string = response.read().decode('utf-8')
+       json_obj = json.loads(string)
+       return HttpResponse(json.dumps(json_obj),content_type="application/json")
+
 def search_api(request):
 
     if request.method == "GET":
