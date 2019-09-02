@@ -1,69 +1,21 @@
 {% extends "awsreviews/base.html" %}
 {% block content %}
-   <div>
-       <h2>Solr Queries</h2>
+<h4>The Search Enterprise is providing TUTORIAL type examples to build and maintain Search & Discovery Engines</h4>
+<p>
 <hr>
-
-       <h3>Collection - 20 millions of Amazon Reviews.</h3>
-<a href="https://s3.amazonaws.com/amazon-reviews-pds/readme.html" target="_blank">Amazon Customer Reviews</a>
-        </div>
-<hr>
-<br/>
-
-    <div >
-       	<p><label>query:</label> <br/>
-    	<textarea rows="4" cols="50" name="query" form="searchForm"> Enter lucene query here...</textarea>
-    	<form method="GET" action="/search/result" id="searchForm" >
-        	<button type="submit" class="save btn btn-default">Search</button>
-    	</form>
-    </div>
-<hr>
+<p>
+<h4>Topics</h4>
+<p>
 <ul>
-        <li><p>Searches</p></li>
-                <ul>
-                        <li><a href="/search/result?query=facet.field%3Dstar_rating%26facet%3Don%26q%3Dproduct_id%253AB001FA1NUK%26rows%3D0">Facet  by star-ratings</a>
-                </ul>
-                <ul>
-                        <li><a href="/search/result?query=q%3Dproduct_title:(hdmi%2520AND%2520cable)%26rows%3D0%26facet%3Dtrue%26facet.pivot%3Dproduct_id%2Cstar_rating%26facet.limit%3D10">Facet by Product_id and star-ratings (Pivot)</a>
-                        <li><a href="/search/result?query=q%3Dproduct_title:(hdmi%2520AND%2520cable)%26rows%3D0%26facet%3Dtrue%26facet.pivot%3Dproduct_id%2Cstar_rating%26facet.limit%3D10">Facet by Product_id and star-ratings (Pivot)</a>
-                </ul>
-                <ul>
-                        <li><a href="/search/result?query=fl%3Did%2Cstar_rating%2Cproduct_title%26q%3Dproduct_title%3A(hdmi%2520AND%2520cable)%26group%3Dtrue%26group.field%3Dstar_rating%26group.limit%3D3%26sort%3Dstar_rating%2520desc">Group by star-ratings</a>
-                </ul>
-		<br/>
-                <ul>
-                        <li><a href="/search/result?query=fl%3Dreview_id%2Cproduct_title%2Creview_headline%26mlt%3Dtrue%26mlt.match.include%3Dtrue%26mlt.mintf%3D1%26mlt.mindf%3D1%26q%3Did%3AR3K6K40KCJVGXO%26mlt.fl%3Dreview_headline%2Creview_headline%26mlt.count%3D10%26wt%3D%0A">MoreLikeThis by single document</a>
-                        <li><a href="/search/result?query=fl%3Dreview_id%2Cproduct_title%2Creview_headline%26mlt%3Dtrue%26mlt.match.include%3Dtrue%26mlt.mintf%3D1%26mlt.mindf%3D1%26q%3Dproduct_title:(hdmi%2520AND%2520cable)%26rows%3D5%26mlt.fl%3Dreview_headline%2Creview_headline%26mlt.count%3D10%26wt%3D%0A">MoreLikeThis by search result</a>
-                </ul>
-		<br/>
-                <ul>
-                        <li><a href="/search/result?query=fl%3Did%26hl.fl%3Dreview_body%26hl.fragsize%3D100%26hl.snippets%3D1%26hl%3Don%26q%3Dreview_body%253Ahate">Snippets</a>
-        <li><p>Terms  Queries</p></li>
-		</ul>
-                <ul>
-                        <li><a href="/terms/result?query=terms.fl%3Dproduct_title_str%26terms.prefix%3Da%26terms.mincount%3D5%26terms.limit%3D5">Auto Completing (Type Ahead)</a>
-                </ul>
-                <ul>
-                        <li><a href="/terms/result?query=terms.fl%3Dproduct_title_str%26terms.regex%3D.*hdmi.*%26terms.mincount%3D5%26terms.limit%3D5">Auto Completing (regex)</a>
-                </ul>
+	<li>HOw to buiild Solr Cloud with MILLLIONS of data</li>
+	<li>Solr Query Examples - how to make queries for various examples for beginner to advanced users</li>
+	<li>What is Streaming Expression?</li>
+	<li>How to build the Monitoring and Metrics system for Solr Cloud</li>
+	<li>ElasticSearch</li>
 </ul>
-<hr>
-<br/>
-    <div >
 
-       	<p><label>streaming expr:</label> <br/>
-    	<textarea rows="4" cols="50" name="expr" form="exprForm"> Enter streaming expression here...</textarea>
-    	<form method="GET" action="/search/result" id="exprForm" >
-        	<button type="submit" class="save btn btn-default">Submit</button>
-    	</form>
-    </div>
-<hr>
-<ul>
-        <li><p>Streaming Expression</p></li>
-                <ul>
-                        <li><a href='/stream/result?expr=search(reviews,q="product_title:(hdmi AND cable)",fl="id, product_title,star_rating",rows=1000,sort="id asc")'>List first 1000 matched documents</a>
-                        <li><a href='/stream/result?expr=let(samples=search(reviews,q="product_title:(hdmi AND cable)",fl="id, product_title,star_rating",rows=1000,sort="id asc"),responses=col(samples,star_rating),summary=describe(responses))'>Summary of star-ratings for (hdmi AND cable)</a>
-		</ul>
-</ul>
+<p>
+<h5>The topics will be updated and added later. Please visit later for more details and examples</h5>
+
 {% endblock content %}
 
