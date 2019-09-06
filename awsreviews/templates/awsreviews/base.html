@@ -22,7 +22,42 @@ input[type=text], select, textarea {
   margin-bottom: 16px; /* Bottom margin */
   resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
+
+#code {
+  width: 100%;
+  position: relative;
+  font-family: sans-serif;
+  height: 100%;
+  border: 2px solid red;
+}
+#code .area {
+  resize: none;
+  outline: none;
+  border: 2px solid;
+  display: block;
+  width: 100%;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
 */
+
+#code textarea.area {
+  resize:none;
+  left: 0;
+  height:2em;
+  width:50em;
+  border: 2px dotted blue;
+  background: transparent;
+}
+
+.boxed {
+  border: 1px solid green ;
+  width:50em;
+} 
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {

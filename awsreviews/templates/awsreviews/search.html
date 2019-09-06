@@ -12,9 +12,9 @@
 
     <div >
        	<p><label>query:</label> <br/>
-    	<textarea rows="4" cols="50" name="query" form="searchForm"> Enter lucene query here...</textarea>
-    	<form method="GET" action="/search/result" id="searchForm" >
-        	<button type="submit" class="save btn btn-default">Search</button>
+    	<textarea rows="2" cols="100" name="query" form="searchForm"> Enter lucene query here...</textarea>
+    	<form method="GET" action="/search/result" id="searchForm"  >
+        	<button type="submit" formtarget="_blank" class="save btn btn-default">Search</button>
     	</form>
     </div>
 <hr>
@@ -22,14 +22,21 @@
         <li><p>Searches</p></li>
                 <ul>
                         <li><a href="/search/result?query=facet.field%3Dstar_rating%26facet%3Don%26q%3Dproduct_id%253AB001FA1NUK%26rows%3D0">Facet  by star-ratings</a>
+		
+			<div class="boxed">facet.field=star_rating&facet=on&q=product_id:B001FA1NUK&rows=0</textarea></div>
+			<p>
+
                 </ul>
                 <ul>
                         <li><a href="/search/result?query=q%3Dproduct_title:(hdmi%2520AND%2520cable)%26rows%3D0%26facet%3Dtrue%26facet.pivot%3Dproduct_id%2Cstar_rating%26facet.limit%3D10" target="_blank">Facet by Product_id and star-ratings (Pivot)</a>
                         <li><a href="/search/result?query=q%3Dproduct_title:(hdmi%2520AND%2520cable)%26rows%3D0%26facet%3Dtrue%26facet.pivot%3Dproduct_id%2Cstar_rating%26facet.limit%3D10" target="_blank">Facet by Product_id and star-ratings (Pivot)</a>
                 </ul>
                 <ul>
+			<br>
+			<h3>users who frequently post reviews have a 5-star rating by review_date</h3>
                         <li><a href="/search/result?query=facet.limit%3D5%26facet.pivot.mincount%3D10%26facet.pivot%3Dreview_date%252Ccustomer_id%26facet%3Don%26q%3D*%253A*%26rows%3D0" target="_blank">Facet by reviews_date and customer_id (Pivot)</a>
                         <li><a href="/search/result?query=facet.limit%3D5%26facet.pivot.mincount%3D10%26facet.pivot%3Dcustomer_id%252Creview_date%26facet%3Don%26q%3D*%253A*%26rows%3D0" target="_blank">Facet by customer_id  and review_date(Pivot)</a>
+                        <li><a href="/search/result?query=facet.limit%3D5%26facet.pivot.mincount%3D10%26facet.pivot%3Dcustomer_id%252Creview_date%252Cstar_rating%26facet%3Don%26q%3D*%253A*%26rows%3D0" target="_blank">Facet by customer_id,  review_date and star_rating (Pivot)</a>
                 </ul>
 		<br/>
                 <ul>
@@ -53,9 +60,9 @@
     <div >
 
        	<p><label>streaming expr:</label> <br/>
-    	<textarea rows="4" cols="50" name="expr" form="exprForm"> Enter streaming expression here...</textarea>
+    	<textarea rows="2" cols="100" name="expr" form="exprForm"> Enter streaming expression here...</textarea>
     	<form method="GET" action="/search/result" id="exprForm" >
-        	<button type="submit" class="save btn btn-default">Submit</button>
+        	<button type="submit" formtarget="_blank" class="save btn btn-default">Submit</button>
     	</form>
     </div>
 <hr>
